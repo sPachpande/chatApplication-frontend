@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useContext } from 'react'
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -8,7 +8,9 @@ import Box from '@mui/material/Box';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import { UserContext } from '../context/UserContext'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useHistory } from 'react-router-dom';
 
 const Logintheme = createTheme({
   palette: {
@@ -23,13 +25,21 @@ const Logintheme = createTheme({
 
 export default function Login() {
 
+  const {setUser} = useContext(UserContext);
+  const history = useHistory();
+
   const handleSubmit = (event) => {
-    event.preventDefault();
+     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
       username: data.get('username'),
       password: data.get('password'),
     });
+    setUser({
+      username: data.get('username'),
+      password: data.get('password'),
+    });
+    history.push("/");
   };
 
   return (
@@ -46,7 +56,7 @@ export default function Login() {
 
           }}>
 
-          <Avatar sx={{ m: 2, bgcolor: 'primary.main' }}>
+          <Avatar sx={{ m: 2, bgcolor: 'primary.main' }} data-testid="chat-icon">
             <WhatsAppIcon />
           </Avatar>
 
@@ -64,6 +74,7 @@ export default function Login() {
               name="username"
               autoComplete="username"
               autoFocus
+              data-testid='username-input'
             />
             <TextField
               margin="normal"
@@ -74,6 +85,7 @@ export default function Login() {
               type="password"
               id="password"
               autoComplete="current-password"
+              data-testid='password-input'
             />
 
             <Button
@@ -81,6 +93,7 @@ export default function Login() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              data-testid='login-button'
             >
               Sign In
             </Button>

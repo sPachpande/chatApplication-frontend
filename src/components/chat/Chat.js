@@ -1,9 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext,useState,useEffect}from 'react'
 import { UserContext } from '../context/UserContext'
 
-export default function Chat(msg) {
-    const message = useContext(UserContext);
+export default function Chat() {
+
+    const {user} = useContext(UserContext);
+    const showProfile=()=>{
+        console.log(user);
+    }
     return (
-        <div>{message}</div>
+        <div>
+            App
+            <pre>{JSON.stringify(user)}</pre>
+            <button onClick={()=>{showProfile()}}>Profile</button>
+        </div>
     )
 }

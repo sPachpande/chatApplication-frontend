@@ -1,14 +1,6 @@
 fileignoreconfig:
-- filename: src/config/env-config.js
-  checksum: 56eb1a01c501c94cae9e6694357c0aa5c56f764d765703c84185d8a05378c6bc
-- filename: yarn.lock
-  checksum: d7265c05b37f80962abd49071253e0dc5381d80a8185327468fade110eef9691
 - filename: src/components/login/Login.js
-  checksum: 8f0b6bac888199f9db3103dc5cfbdd6e648401e46e9ee1b5d67de84fba0baac5
-- filename: src/helpers/authService.js
-  checksum: d3105dc3a992e70c433710c05bee2b23a33dfaa4a16462fa5f20defbf4d20ff4
-- filename: src/helpers/authService.spec.js
-  checksum: c2afac41dc6a7296caa4d26a03fd6feba5c07aeb3af342d8ef606262546c8c17
-- filename: yarn.lock
-  checksum: d7265c05b37f80962abd49071253e0dc5381d80a8185327468fade110eef9691
+  checksum: b372d0501c74be3de2bd185451c662aa2e3952211be313f9a9df43f27b25198e
+- filename: src/components/login/Login.spec.js
+  checksum: 632dfd4422c7507debbfe9e58006a47c856134d41ffe9a0eedb09b37a29dffcf
 version: ""
