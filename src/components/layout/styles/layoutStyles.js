@@ -7,7 +7,7 @@ export default makeStyles({
         backgroundColor: "red"
     },
     header: {
-        backgroundColor: "#128C7E",
+        backgroundColor: "#148B7B",
         height: "15vh"
     },
     footer:{
@@ -22,6 +22,7 @@ export default makeStyles({
         bottom: "20px",
 
         borderRadius: "5px",
-        backgroundColor: "white"
+        backgroundColor: "white",
+        minWidth:"300px"
     },
 }); 

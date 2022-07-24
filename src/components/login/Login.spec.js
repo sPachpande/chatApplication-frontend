@@ -1,11 +1,11 @@
 import React from "react";
 import {shallow} from "enzyme";
-import Layout from "./Layout";
+import Login from "./Login";
 
 describe('Basic rendering', function () {
     it("Should render correctly", () => {
         
-        const layoutComponent = shallow(<Layout/>);
+        const layoutComponent = shallow(<Login/>);
         
         expect(layoutComponent).not.toBeNull();
     })
