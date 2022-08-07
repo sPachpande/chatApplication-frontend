@@ -1,6 +1,7 @@
 import axios from "axios";
 import {urls} from "../config/env-config";
 
+
 const tokenKey = 'chatApp_token';
 const chatAppUsername = 'chatApp_username';
 
@@ -22,13 +23,16 @@ export const authJSONHeader = () => {
 }
 
 export const login = async (username, password) => {
-    const token = authBasic(username, password);
+    var token = authBasic(username, password);
+  
     const config = {
         headers: {
-            Authorization: 'Basic ' + token
+             Authorization: 'Basic ' + token
         }
-    };
+    };  
+
     const response = await axios.get(`${urls.service}/login`, config);
+    
     const userDetails = response.data;
     localStorage.setItem(tokenKey, token)
     localStorage.setItem(chatAppUsername, username);

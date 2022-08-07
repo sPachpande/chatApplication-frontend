@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React,{useEffect} from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -8,9 +8,8 @@ import Box from '@mui/material/Box';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { UserContext } from '../context/UserContext'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useHistory } from 'react-router-dom';
+import useLogin from './hooks/useLogin';
 
 const Logintheme = createTheme({
   palette: {
@@ -23,23 +22,21 @@ const Logintheme = createTheme({
   },
 });
 
-export default function Login() {
+export default function Login({ location, history, isAuthenticated, onLogin }) {
 
-  const {setUser} = useContext(UserContext);
-  const history = useHistory();
+  const { from } = location.state || { from: { pathname: "/" } };
+  const { handleLogin } = useLogin(onLogin);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      history.replace(from);
+    }
+  });
 
   const handleSubmit = (event) => {
      event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      username: data.get('username'),
-      password: data.get('password'),
-    });
-    setUser({
-      username: data.get('username'),
-      password: data.get('password'),
-    });
-    history.push("/");
+    handleLogin(data);
   };
 
   return (

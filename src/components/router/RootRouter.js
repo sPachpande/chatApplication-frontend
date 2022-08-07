@@ -1,21 +1,18 @@
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import React,{useState} from "react";
+import React from "react";
 import Login from "../login/Login";
-import { UserContext } from "../context/UserContext";
 import Chat from "../chat/Chat";
+import ProtectedRoute from "./ProtectedRoute";
 
-const RootRouter = () => {
-    const [user,setUser] = useState(null);
+const RootRouter = ({ isAuthenticated, onLogin, onLogout }) => {
     return (
         <Router>
             <Switch>
-                <UserContext.Provider value={{user,setUser}}>
 
-                    <Route exact path="/" component={Chat} />
+                <ProtectedRoute exact path="/" component={Chat} isAuthenticated={isAuthenticated} />
 
-                    <Route exact path="/login" component={Login} />
+                <Route exact path="/login" component={(props) => <Login isAuthenticated={isAuthenticated} onLogin={onLogin} {...props} />} />
 
-                </UserContext.Provider>
 
                 <Route component={
                     () => "This route is not defined"
