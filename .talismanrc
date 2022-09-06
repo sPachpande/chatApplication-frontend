@@ -7,4 +7,6 @@ fileignoreconfig:
   checksum: a90f32262024e5b58bd2cb4fc7f6a32543fe872b91d1bd155fdbdb38cbcd8b63
 - filename: src/components/login/hooks/useLogin.js
   checksum: 79adba16d98b962b255caddede7d0af5bffceb7ecf422700ba0cfaa200f44f3e
+- filename: src/components/users/Users.js
+  checksum: f67fd5528f8287570561038cb2eaf0bd3ac2854c5995a877e03880fdd68b260e
 version: ""
