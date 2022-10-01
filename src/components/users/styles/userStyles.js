@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core";
 export default makeStyles((theme) =>
     ({
     usersContainer: {
-        borderTopLeftRadius: '5px',
         "& :hover": {
             backgroundColor: "lightyellow",
         }
@@ -20,7 +19,8 @@ export default makeStyles((theme) =>
 
     listRoot: {
         width: '100%',
-        backgroundColor: 'pink'
+        backgroundColor: 'pink',
+        borderTopLeftRadius: '5px',
     },
     
 })
