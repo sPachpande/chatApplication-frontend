@@ -17,7 +17,6 @@ export default function Chat() {
             if(messages.length!=fetchedMessages.length)
                 setMessages(fetchedMessages);
             });
-        console.log(toggleRefresh)
       });
 
     const classes = styles();

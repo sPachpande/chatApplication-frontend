@@ -15,7 +15,6 @@ export default makeStyles({
         float: 'right',
         backgroundColor: 'lightblue',
         height: '890px',
-        width: '70%',
         position: 'relative',
         borderTopRightRadius: '5px',
         borderBottomRightRadius: '5px'

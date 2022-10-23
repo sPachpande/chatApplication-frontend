@@ -23,7 +23,6 @@ export default function MessageBox({setToggleRefresh,receiver}) {
     return (
         <Box
             sx={{
-                backgroundColor: 'lightYellow',
                 width: '70%',
                 display: 'flex',
                 marginLeft: '30%',

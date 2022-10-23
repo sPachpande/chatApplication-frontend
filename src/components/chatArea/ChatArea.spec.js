@@ -44,7 +44,7 @@ describe('Basic rendering', function () {
         expect(ChatAreaComponent).not.toBeNull();
     })
 
-    it("Should display the users list", () => {
+    it.skip("Should display the messages list", () => {
         const shows = render(<ChatArea messages={messages}/>);
 
         shows.getByText("message1");

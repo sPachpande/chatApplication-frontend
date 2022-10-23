@@ -27,13 +27,8 @@ function Users({setMessages,setReceiver}) {
                             <ListItem style={{ height: "70px", cursor: 'pointer' }}
                                 onClick={() => {   
                                     setReceiver(user.id);
-                                    chatService.fetchMessages(user.id).then(response => {
-                                        // const messages = response.data.map(message => message.data);
-                                        // const messages = response.data.map(message => ({ ...message, sender: message.sender.id,receiver: message.receiver.id }));
-                                        const messages = response.data.map(message => message.data);
-                                        
+                                    chatService.fetchMessages(user.id).then(response => {   
                                         setMessages(response.data);
-                                        console.log(response.data)
                                         setReceiver(user.id);
                                         });
                                 }}>      
