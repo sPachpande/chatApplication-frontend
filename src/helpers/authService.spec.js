@@ -40,7 +40,7 @@ describe("Basic logic", () => {
         };
         when(axios.get)
             .calledWith(`${urls.service}/login`, testConfig)
-            .mockRejectedValue("unused");
+            .mockRejectedValue({data: "userDetails"});
 
         try {
             await login(testUsername, testPassword);
@@ -58,7 +58,7 @@ describe("Basic logic", () => {
         };
         when(axios.get)
             .calledWith(`${urls.service}/login`, testConfig)
-            .mockResolvedValue("unused");
+            .mockResolvedValue({data: "userDetails"});
 
         await login(testUsername, testPassword);
         const actualAuthHeader = authHeader();
@@ -74,7 +74,7 @@ describe("Basic logic", () => {
         };
         when(axios.get)
             .calledWith(`${urls.service}/login`, testConfig)
-            .mockResolvedValue("unused");
+            .mockResolvedValue({data: "userDetails"});
 
         await login(testUsername, testPassword);
         const actualIsLoggedIn = isLoggedIn();
@@ -90,7 +90,7 @@ describe("Basic logic", () => {
         };
         when(axios.get)
             .calledWith(`${urls.service}/login`, testConfig)
-            .mockResolvedValue("unused");
+            .mockResolvedValue({data: "userDetails"});
 
         await login(testUsername, testPassword);
         logout();

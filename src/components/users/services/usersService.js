@@ -2,8 +2,7 @@ import apiService from "../../../helpers/apiService";
 
 export default {
     fetchAll: async () => {
-        const response = await apiService.get(`users`);
-        console.log(response.data);
+        const response = await apiService.get('users');
         return response.data;
     }
 }   

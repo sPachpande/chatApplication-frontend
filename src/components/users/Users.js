@@ -10,8 +10,10 @@ import {
     Typography
 } from "@material-ui/core";
 
+import chatService from '../chat/services/chatService';
 
-function Users({setRecepient}) {
+
+function Users({setMessages,setReceiver}) {
     const classes = styles();
     const { users, usersLoading } = useUsers();
    
@@ -24,7 +26,16 @@ function Users({setRecepient}) {
 
                             <ListItem style={{ height: "70px", cursor: 'pointer' }}
                                 onClick={() => {   
-                                    setRecepient(user.username);
+                                    setReceiver(user.id);
+                                    chatService.fetchMessages(user.id).then(response => {
+                                        // const messages = response.data.map(message => message.data);
+                                        // const messages = response.data.map(message => ({ ...message, sender: message.sender.id,receiver: message.receiver.id }));
+                                        const messages = response.data.map(message => message.data);
+                                        
+                                        setMessages(response.data);
+                                        console.log(response.data)
+                                        setReceiver(user.id);
+                                        });
                                 }}>      
                                 
 

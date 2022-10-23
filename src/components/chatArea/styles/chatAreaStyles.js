@@ -4,11 +4,11 @@ export default makeStyles({
 
     chatArea: {
         float: 'right',
-        height: '811px',
         width: '70%',
-        position: 'relative',
+        display: "flex",
+        height:"84vh",
         borderTopRightRadius: '5px',
         backgroundColor: 'lightgreen',
-        
+        overflow:'scroll',
 }
 });     

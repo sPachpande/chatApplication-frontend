@@ -4,6 +4,8 @@ import {urls} from "../config/env-config";
 
 const tokenKey = 'chatApp_token';
 const chatAppUsername = 'chatApp_username';
+const chatAppId = 'chatApp_Id';
+
 
 export const authHeader = () => {
     return {
@@ -34,8 +36,9 @@ export const login = async (username, password) => {
     const response = await axios.get(`${urls.service}/login`, config);
     
     const userDetails = response.data;
-    localStorage.setItem(tokenKey, token)
+    localStorage.setItem(tokenKey, token);
     localStorage.setItem(chatAppUsername, username);
+    localStorage.setItem(chatAppId, userDetails.id);
     return userDetails;
 }
 
