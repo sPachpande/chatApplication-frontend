@@ -3,13 +3,14 @@ import React,{useEffect,useRef} from 'react';
 import Box from '@mui/material/Box';
 import styles from './styles/chatAreaStyles';
 import MessageBox from '../messageBox/MessageBox';
+import ReceiverProfile from '../receiverProfile/ReceiverProfile'
 
 import {
     List,
     Card
 } from "@material-ui/core";
 
-export default function ChatArea({setToggleRefresh,messages,receiver}) {
+export default function ChatArea({setToggleRefresh,messages,receiver,receiverName}) {
 
     const bottomRef = useRef();
     useEffect(()=>{
@@ -18,6 +19,7 @@ export default function ChatArea({setToggleRefresh,messages,receiver}) {
     const classes = styles();
     return (
     <>
+    <ReceiverProfile className={classes.ReceiverProfile} receiver={receiver} receiverName={receiverName}/>
         <Box className={classes.chatArea}>
         <div>
             <List className={classes.listRoot} ref={bottomRef}>

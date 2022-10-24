@@ -14,7 +14,7 @@ import { faker } from '@faker-js/faker';
 import chatService from '../chat/services/chatService';
 
 
-function Users({ setMessages, setReceiver }) {
+function Users({ setMessages, setReceiver,setReceiverName }) {
     const classes = styles();
     const { users, usersLoading } = useUsers();
     faker.seed(11);
@@ -29,9 +29,9 @@ function Users({ setMessages, setReceiver }) {
                             <ListItem style={{ height: "70px", cursor: 'pointer' }}
                                 onClick={() => {
                                     setReceiver(user.id);
+                                    setReceiverName(user.username);
                                     chatService.fetchMessages(user.id).then(response => {
                                         setMessages(response.data);
-                                        setReceiver(user.id);
                                     });
                                 }}>
 

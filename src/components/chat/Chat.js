@@ -10,6 +10,7 @@ export default function Chat() {
     const [receiver, setReceiver] = useState(null);
     const [messages,setMessages] = useState([]);
     const [toggleRefresh, setToggleRefresh] = useState(false)
+    const [receiverName, setReceiverName] = useState(null);
     
     useEffect(() => {
         chatService.fetchMessages(receiver).then(response => {
@@ -23,8 +24,8 @@ export default function Chat() {
     
     return (
         <div className={classes.app}>
-            <div className={classes.users}><Users setMessages={setMessages} setReceiver={setReceiver}/> </div>
-            <ChatArea setToggleRefresh={setToggleRefresh} messages={messages} receiver={receiver}/>
+            <div className={classes.users}><Users setMessages={setMessages} setReceiver={setReceiver} setReceiverName={setReceiverName}/> </div>
+            <ChatArea setToggleRefresh={setToggleRefresh} messages={messages} receiver={receiver} receiverName={receiverName}/>
 
         </div>
     )
