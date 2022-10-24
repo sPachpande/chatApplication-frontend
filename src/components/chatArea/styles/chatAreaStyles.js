@@ -6,7 +6,7 @@ export default makeStyles({
     chatArea: {
         float: 'right',
         width: '70%',
-        height:"84vh",
+        height:"86vh",
         borderTopRightRadius: '5px',
         overflow:'scroll',
         backgroundImage: `url(${chatBackground})`,
