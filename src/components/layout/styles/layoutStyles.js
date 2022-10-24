@@ -22,7 +22,7 @@ export default makeStyles({
         bottom: "20px",
 
         borderRadius: "5px",
-        backgroundColor: "lightYellow",
+        backgroundColor: "#ece5dd",
         minWidth:"300px"
     },
 }); 

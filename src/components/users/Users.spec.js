@@ -11,10 +11,11 @@ jest.mock("./hooks/useUsers", () => ({
     default: jest.fn()
 }));
 
-describe('Basic rendering', function () {
+describe.skip('Basic rendering', function () {
 
     beforeEach(()=>{
-        when(useUsers).calledWith().mockReturnValue({   
+        
+        when(useUsers).calledWith().mockReturnValue({  
             users: [
                 {
                     id: 1,

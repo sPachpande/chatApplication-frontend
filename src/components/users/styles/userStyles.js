@@ -9,14 +9,17 @@ export default makeStyles((theme) =>
     },
 
     itemText:{
-
+        marginLeft:"10px"
     },
 
     listRoot: {
         width: '100%',
-        backgroundColor: 'white',
-        borderTopLeftRadius: '5px',
+        backgroundColor: '#ece5dd',
+        // backgroundColor: 'white',
+        height:"92vh",
+        overflow: "scroll"
     },
+
     
 })
 );

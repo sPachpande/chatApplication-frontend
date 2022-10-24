@@ -7,7 +7,6 @@ export default makeStyles({
         float: 'right',
         width: '70%',
         height:"80.5vh",
-        borderTopRightRadius: '5px',
         overflow:'scroll',
         backgroundImage: `url(${chatBackground})`,
     },

@@ -6,9 +6,7 @@ export default makeStyles({
     },
     users: {
         float: 'left',
-        width: '30%',
-        
-        position: 'absolute',
+        width: '30%',  
         borderTopLeftRadius: '5px',
         borderBottomLeftRadius: '5px',
         height:"92vh",
