@@ -9,14 +9,16 @@ import {
     ListItemText,
     Typography
 } from "@material-ui/core";
+import { faker } from '@faker-js/faker';
 
 import chatService from '../chat/services/chatService';
 
 
-function Users({setMessages,setReceiver}) {
+function Users({ setMessages, setReceiver }) {
     const classes = styles();
     const { users, usersLoading } = useUsers();
-   
+    faker.seed(11);
+
     return (
         <>
             <List className={classes.listRoot}>
@@ -25,18 +27,18 @@ function Users({setMessages,setReceiver}) {
                         <div key={user.username} className={classes.usersContainer}>
 
                             <ListItem style={{ height: "70px", cursor: 'pointer' }}
-                                onClick={() => {   
+                                onClick={() => {
                                     setReceiver(user.id);
-                                    chatService.fetchMessages(user.id).then(response => {   
+                                    chatService.fetchMessages(user.id).then(response => {
                                         setMessages(response.data);
                                         setReceiver(user.id);
-                                        });
-                                }}>      
-                                
+                                    });
+                                }}>
+
 
                                 <ListItemAvatar classes={{ root: classes.userIcon }} >
 
-                                    <Avatar>{users.username }</Avatar>
+                                <Avatar src={faker.image.avatar()}/>
 
                                 </ListItemAvatar>
 
@@ -52,7 +54,6 @@ function Users({setMessages,setReceiver}) {
                                         </Typography>
                                     </>
                                 } />
-
 
                             </ListItem>
                         </div>

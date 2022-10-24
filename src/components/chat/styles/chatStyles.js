@@ -7,16 +7,12 @@ export default makeStyles({
     users: {
         float: 'left',
         width: '30%',
-        backgroundColor: 'grey',
+        
         position: 'absolute',
-        borderRadius: "5px"
-},
-    messages: {
-        float: 'right',
-        backgroundColor: 'lightblue',
-        height: '890px',
-        position: 'relative',
-        borderTopRightRadius: '5px',
-        borderBottomRightRadius: '5px'
+        borderTopLeftRadius: '5px',
+        borderBottomLeftRadius: '5px',
+        height:"92vh",
+        overflow: "scroll"
+        
 }
 }); 

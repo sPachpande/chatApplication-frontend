@@ -4,12 +4,7 @@ export default makeStyles((theme) =>
     ({
     usersContainer: {
         "& :hover": {
-            backgroundColor: "lightyellow",
-        }
-    },
-    userIcon: {
-        "& :hover": {
-            backgroundColor: "red",
+            backgroundColor: "#f2f4f3",
         }
     },
 
@@ -19,7 +14,7 @@ export default makeStyles((theme) =>
 
     listRoot: {
         width: '100%',
-        backgroundColor: 'pink',
+        backgroundColor: 'white',
         borderTopLeftRadius: '5px',
     },
     
