@@ -9,8 +9,8 @@ export default makeStyles({
         width: '30%',  
         borderTopLeftRadius: '5px',
         borderBottomLeftRadius: '5px',
-        height:"92vh",
-        overflow: "scroll"
+        // height:"92vh",
+        // overflow: "scroll"
         
 }
 }); 

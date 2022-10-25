@@ -11,6 +11,12 @@ export default function SenderProfile({ senderName }) {
     const viewSenderProfile = () => {
 
     };
+    const handleLogout = () =>{
+        localStorage.clear('chatApp_Id');
+        localStorage.clear('chatApp_username');
+        localStorage.clear('chatApp_token');
+        window. location. reload();
+    };
     return (
         <Box
             sx={{
@@ -19,17 +25,17 @@ export default function SenderProfile({ senderName }) {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
+                borderTopLeftRadius: '5px'
             }}>
             <div>
                 <span><IconButton color="primary" sx={{ marginLeft:"12px",color: "grey" }}>
-                    {/* <AccountCircleIcon sx={{ fontSize: "40px" }} /> */}
                     <Avatar src={faker.image.avatar()}/>
                 </IconButton></span>
                 <span style={{marginLeft:"13px"}}>{senderName}</span>
             </div>
             <div>
-                <span><IconButton color="primary" sx={{ marginRight: '10px', color: "grey"}} onClick={viewSenderProfile}>
-                    <LogoutIcon sx={{ fontSize: "25px" }} />
+                <span><IconButton color="primary" sx={{ marginRight: '10px', color: "grey"}} onClick={handleLogout}>
+                    <LogoutIcon sx={{ fontSize: "25px" }}/>
                 </IconButton></span>
             </div>
 

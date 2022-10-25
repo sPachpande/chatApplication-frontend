@@ -10,6 +10,15 @@ export default makeStyles({
         overflow:'scroll',
         backgroundImage: `url(${chatBackground})`,
     },
+    welcomeArea: {
+        float: 'right',
+        width: '70%',
+        height:"92vh",
+        overflow:'scroll',
+        backgroundImage: `url(${chatBackground})`,
+        borderTopRightRadius: '5px',
+        borderBottomRightRadius: '5px'
+    },
     messageContainer: { 
         marginBottom:"10px",
         wordWrap: 'break-word',

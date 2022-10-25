@@ -1,5 +1,5 @@
 import React from "react";
-import {render } from "@testing-library/react";
+import {render, fireEvent} from "@testing-library/react";
 import SenderProfile from './SenderProfile';
 
 
@@ -11,7 +11,6 @@ describe('Basic rendering', function () {
         const SenderProfileComponent = render(<SenderProfile senderName={senderName}/>);
 
         expect(SenderProfileComponent).not.toBeNull();
-        SenderProfileComponent.getByText("test1");
     })
 
 });

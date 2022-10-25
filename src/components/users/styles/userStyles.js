@@ -16,7 +16,7 @@ export default makeStyles((theme) =>
         width: '100%',
         backgroundColor: '#ece5dd',
         // backgroundColor: 'white',
-        height:"92vh",
+        height:"86vh",
         overflow: "scroll"
     },
 

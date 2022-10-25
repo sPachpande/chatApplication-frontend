@@ -24,7 +24,7 @@ function Users({ setMessages, setReceiver, setReceiverName }) {
         setSenderId(localStorage.getItem('chatApp_Id'));
     });
 
-    faker.seed(21);
+    faker.seed(23);
     return (
         <div className={classes.users}>
             <SenderProfile senderName={senderName}/>

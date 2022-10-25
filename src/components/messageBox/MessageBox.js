@@ -1,11 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
-import TextField from '@mui/material/TextField';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SendIcon from '@mui/icons-material/Send';
 import Box from '@mui/material/Box';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import chatService from '../chat/services/chatService';
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
@@ -24,6 +22,8 @@ export default function MessageBox({ setToggleRefresh, receiver }) {
     };
 
     return (
+        <>
+        {receiver ? (
         <Box
             sx={{
                 backgroundColor: "#F2F4F3",
@@ -66,5 +66,8 @@ export default function MessageBox({ setToggleRefresh, receiver }) {
             </IconButton>
 
         </Box>
+        ) : (
+            <></>
+        )}</>
     )
 }
