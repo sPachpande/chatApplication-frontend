@@ -1,14 +1,13 @@
 import React,{useEffect} from 'react';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import logo from '../../images/logoWithNameGreen.png'
 import useLogin from './hooks/useLogin';
 
 const Logintheme = createTheme({
@@ -53,12 +52,11 @@ export default function Login({ location, history, isAuthenticated, onLogin }) {
 
           }}>
 
-          <Avatar sx={{ m: 2, bgcolor: 'primary.main' }} data-testid="chat-icon">
-            <WhatsAppIcon />
-          </Avatar>
+          
+          <img src={ logo } style={{height:"200px",width:'200px'}} />
 
           <Typography variant="h5">
-            SIGN IN
+            Log In
           </Typography>
 
           <Box component="form" onSubmit={handleSubmit} >
@@ -102,7 +100,7 @@ export default function Login({ location, history, isAuthenticated, onLogin }) {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/register" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

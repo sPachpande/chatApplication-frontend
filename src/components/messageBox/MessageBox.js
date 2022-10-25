@@ -46,7 +46,7 @@ export default function MessageBox({ setToggleRefresh, receiver }) {
                 <InputBase
                     required
                     size="small"
-                    sx={{ width: '96%', marginLeft: '20px', marginRight: '10px', marginTop: "5px", marginBottom: "5px", marginLeft: "20px", marginRight: "20px" }}
+                    sx={{ width: '96%', marginLeft: '20px', marginRight: '10px', marginTop: "5px", marginBottom: "5px" }}
                     id="message"
                     placeholder='Type a message'
                     data-testid='message-input'

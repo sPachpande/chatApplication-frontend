@@ -15,7 +15,7 @@ export default function Chat() {
     useEffect(() => {
         chatService.fetchMessages(receiver).then(response => {
             const fetchedMessages = response.data;
-            if(messages.length!=fetchedMessages.length)
+            if(messages.length!==fetchedMessages.length)
                 setMessages(fetchedMessages);
             });
       });

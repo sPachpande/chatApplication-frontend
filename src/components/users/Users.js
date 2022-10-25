@@ -22,20 +22,20 @@ function Users({ setMessages, setReceiver, setReceiverName }) {
     useEffect(() => {
         setSenderName(localStorage.getItem('chatApp_username'));
         setSenderId(localStorage.getItem('chatApp_Id'));
-    });
+    }, []);
 
     faker.seed(23);
     return (
         <div className={classes.users}>
-            <SenderProfile senderName={senderName}/>
+            <SenderProfile senderName={senderName} />
             <List className={classes.listRoot}>
                 {
                     users.map(user => (
                         <div key={user.id} className={classes.usersContainer}>
                             {user.id.toString() === senderId.toString() ? (<></>) :
                                 (<>
-                                {/* borderBottom:'solid #dadada', borderBottomWidth: 'thin' , borderRadius:'0px' */}
-                                    <ListItem style={{ height: "70px", cursor: 'pointer'}}
+                                    {/* borderBottom:'solid #dadada', borderBottomWidth: 'thin' , borderRadius:'0px' */}
+                                    <ListItem style={{ height: "70px", cursor: 'pointer' }}
                                         onClick={() => {
                                             setReceiver(user.id);
                                             setReceiverName(user.username);
@@ -47,7 +47,7 @@ function Users({ setMessages, setReceiver, setReceiverName }) {
 
                                         <ListItemAvatar classes={{ root: classes.userIcon }} >
 
-                                            <Avatar src={faker.image.avatar()}  style={{height:'50px',width:"50px"}}/>
+                                            <Avatar src={faker.image.avatar()} style={{ height: '50px', width: "50px" }} />
 
                                         </ListItemAvatar>
 
@@ -65,7 +65,7 @@ function Users({ setMessages, setReceiver, setReceiverName }) {
                                         } />
 
                                     </ListItem>
-                                    </>)}
+                                </>)}
                         </div>
                     ))
                 }

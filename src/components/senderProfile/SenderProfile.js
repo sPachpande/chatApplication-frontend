@@ -15,7 +15,7 @@ export default function SenderProfile({ senderName }) {
         localStorage.clear('chatApp_Id');
         localStorage.clear('chatApp_username');
         localStorage.clear('chatApp_token');
-        window. location. reload();
+        window.location.reload();
     };
     return (
         <Box
@@ -34,7 +34,7 @@ export default function SenderProfile({ senderName }) {
                 <span style={{marginLeft:"13px"}}>{senderName}</span>
             </div>
             <div>
-                <span><IconButton color="primary" sx={{ marginRight: '10px', color: "grey"}} onClick={handleLogout}>
+                <span><IconButton color="primary" sx={{ marginRight: '10px', color: "red"}} onClick={handleLogout}>
                     <LogoutIcon sx={{ fontSize: "25px" }}/>
                 </IconButton></span>
             </div>
