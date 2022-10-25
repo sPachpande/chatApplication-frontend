@@ -14,7 +14,7 @@ export default function MessageBox({ setToggleRefresh, receiver }) {
     const [message, setMessage] = useState('');
 
     const sendMessage = () => {
-        if (message && message.trim() ==! '')
+        if (message)
             chatService.sendMessage(receiver, message).then(response => {
                 setToggleRefresh(prevState => !prevState)
             });

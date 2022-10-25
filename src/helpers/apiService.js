@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {urls} from "../config/env-config";
-import {authHeader, authJSONHeader} from "./authService";
+import {authHeader} from "./authService";
 
 const promiseWithErrorHandling = (promise) => {
     return promise.catch(err => {

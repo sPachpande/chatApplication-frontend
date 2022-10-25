@@ -1,20 +1,12 @@
-import React, {useState} from "react";
-import Typography from "@material-ui/core/Typography";
-import styles from "../styles/loginStyles"
+import {useState} from "react";
+
 
 export default (onLogin) => {
-    const classes = styles();
     const [showError, setShowError] = useState(false);
 
-    const errorMessage = () => {
-        if (showError) {
-            return (
-                <Typography variant="body1" color="error" className={classes.loginErrorMessage}>
-                    Login failed
-                </Typography>
-            )
-        }
-    };
+    var getShowError= ()=>{
+        return showError;
+    }
 
     const handleLogin = async (data) => {
         const username = data.get('username');
@@ -32,7 +24,8 @@ export default (onLogin) => {
     };
 
     return {
-        errorMessage: errorMessage,
+        getShowError: getShowError,
+        setShowError: setShowError,
         handleLogin: handleLogin
     };
 };

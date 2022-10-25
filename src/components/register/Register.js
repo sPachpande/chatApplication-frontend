@@ -53,7 +53,6 @@ export default function Register({ location, history, isAuthenticated }) {
     };
 
     useEffect(() => {
-        console.log("refreshed");
         if (isAuthenticated) {
             history.replace(from);
         }
@@ -81,7 +80,7 @@ export default function Register({ location, history, isAuthenticated }) {
 
                     }}>
 
-                    <img src={logo} style={{ height: "200px", width: '200px' }} />
+                    <img alt = "logo" src={logo} style={{ height: "200px", width: '200px' }} />
 
                     <Typography variant="h5">
                         Register

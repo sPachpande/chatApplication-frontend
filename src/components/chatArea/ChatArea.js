@@ -46,7 +46,7 @@ export default function ChatArea({ setToggleRefresh, messages, receiver, receive
             ) : (
                 <>
                     <Box className={classes.welcomeArea}>
-                    <img src={ logo } style={{height:"400px",width:'400px',marginTop:"20%",marginLeft:"35%"}} />
+                    <img alt="logo" src={ logo } style={{height:"400px",width:'400px',marginTop:"25vh",marginLeft:"37vh"}} />
                             <List  ref={bottomRef}>
                                 
                             </List>

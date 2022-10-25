@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Link from '@mui/material/Link';
@@ -9,6 +9,8 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import logo from '../../images/logoWithNameGreen.png'
 import useLogin from './hooks/useLogin';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 const Logintheme = createTheme({
   palette: {
@@ -24,7 +26,7 @@ const Logintheme = createTheme({
 export default function Login({ location, history, isAuthenticated, onLogin }) {
 
   const { from } = location.state || { from: { pathname: "/" } };
-  const { handleLogin } = useLogin(onLogin);
+  const { getShowError, setShowError,handleLogin } = useLogin(onLogin);
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -33,10 +35,14 @@ export default function Login({ location, history, isAuthenticated, onLogin }) {
   });
 
   const handleSubmit = (event) => {
-     event.preventDefault();
+    event.preventDefault();
     const data = new FormData(event.currentTarget);
     handleLogin(data);
   };
+  const handleClose = () => {
+    document.getElementById("loginForm").reset();
+    setShowError(false)
+  }
 
   return (
     <ThemeProvider theme={Logintheme}>
@@ -52,14 +58,14 @@ export default function Login({ location, history, isAuthenticated, onLogin }) {
 
           }}>
 
-          
-          <img src={ logo } style={{height:"200px",width:'200px'}} />
+
+          <img alt="logo" src={logo} style={{ height: "200px", width: '200px' }} />
 
           <Typography variant="h5">
             Log In
           </Typography>
 
-          <Box component="form" onSubmit={handleSubmit} >
+          <Box component="form" onSubmit={handleSubmit} id="loginForm">
             <TextField
               margin="normal"
               required
@@ -92,7 +98,6 @@ export default function Login({ location, history, isAuthenticated, onLogin }) {
             >
               Sign In
             </Button>
-
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
@@ -109,6 +114,14 @@ export default function Login({ location, history, isAuthenticated, onLogin }) {
           </Box>
         </Box>
       </Container>
+      <Snackbar open={getShowError()} autoHideDuration={2000} onClose={handleClose} sx={{ height: "60%", width: 445 }} anchorOrigin={{
+        vertical: "bottom",
+        horizontal: "center"
+      }}>
+        <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+          Login failed
+        </Alert>
+      </Snackbar>
     </ThemeProvider>
   );
 }
