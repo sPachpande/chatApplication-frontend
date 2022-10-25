@@ -19,11 +19,19 @@ export default makeStyles({
         borderTopRightRadius: '5px',
         borderBottomRightRadius: '5px'
     },
-    messageContainer: { 
+    sentMessageContainer: { 
         marginBottom:"10px",
         wordWrap: 'break-word',
         display:"flex",
         justifyContent:"right",
+        marginLeft:"5%",
+        marginRight:"5%"
+    },
+    receivedMessageContainer: { 
+        marginBottom:"10px",
+        wordWrap: 'break-word',
+        display:"flex",
+        justifyContent:"left",
         marginLeft:"5%",
         marginRight:"5%"
     }

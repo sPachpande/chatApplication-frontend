@@ -27,19 +27,18 @@ function Users({ setMessages, setReceiver, setReceiverName }) {
     faker.seed(23);
     return (
         <div className={classes.users}>
-            <SenderProfile senderName={senderName} />
+            <SenderProfile senderName={senderName}/>
             <List className={classes.listRoot}>
                 {
                     users.map(user => (
                         <div key={user.id} className={classes.usersContainer}>
                             {user.id.toString() === senderId.toString() ? (<></>) :
                                 (<>
-                                    {/* borderBottom:'solid #dadada', borderBottomWidth: 'thin' , borderRadius:'0px' */}
                                     <ListItem style={{ height: "70px", cursor: 'pointer' }}
                                         onClick={() => {
-                                            setReceiver(user.id);
-                                            setReceiverName(user.username);
                                             chatService.fetchMessages(user.id).then(response => {
+                                                setReceiver(user.id);
+                                                setReceiverName(user.username);
                                                 setMessages(response.data);
                                             });
                                         }}>

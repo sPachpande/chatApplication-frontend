@@ -15,7 +15,7 @@ export default function ChatArea({ setToggleRefresh, messages, receiver, receive
 
     const bottomRef = useRef();
     useEffect(() => {
-        bottomRef.current.scrollIntoView({ behavior: 'smooth', block: "end" });
+        bottomRef.current.scrollIntoView({ block: "end" });
     });
     const classes = styles();
     return (
@@ -27,10 +27,16 @@ export default function ChatArea({ setToggleRefresh, messages, receiver, receive
                         <List className={classes.listRoot} ref={bottomRef}>
                             {
                                 messages.map(message => (
-                                    <div key={message.id} className={classes.messageContainer}>
-                                        <Card style={{ maxWidth: "50%", padding: "10px", backgroundColor: "#DCF8C6" }}>
+                                    <div key={message.id}>
+                                    {receiver === message.receiver.id ? (<div key={message.id} className={classes.sentMessageContainer}>
+                                        <Card style={{ maxWidth: "50%", padding: "10px", backgroundColor: "#DCF8C6",borderRadius:'15px 5px 15px 10px' }}>
                                             {message.data}
                                         </Card>
+                                    </div>) : (<div key={message.id} className={classes.receivedMessageContainer}>
+                                        <Card style={{ maxWidth: "50%", padding: "10px", backgroundColor: "white",borderRadius:'5px 15px 10px 15px' }}>
+                                            {message.data}
+                                        </Card>
+                                    </div>)}
                                     </div>
                                 ))
                             }

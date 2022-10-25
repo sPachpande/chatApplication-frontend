@@ -2,16 +2,13 @@ import React from 'react';
 import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
 import LogoutIcon from '@mui/icons-material/Logout';
-import {Avatar} from '@material-ui/core';
+import { Avatar } from '@material-ui/core';
 
 import { faker } from '@faker-js/faker';
 
 export default function SenderProfile({ senderName }) {
 
-    const viewSenderProfile = () => {
-
-    };
-    const handleLogout = () =>{
+    const handleLogout = () => {
         localStorage.clear('chatApp_Id');
         localStorage.clear('chatApp_username');
         localStorage.clear('chatApp_token');
