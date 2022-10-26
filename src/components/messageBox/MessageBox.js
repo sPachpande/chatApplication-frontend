@@ -9,16 +9,23 @@ import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 
 
-export default function MessageBox({ setToggleRefresh, receiver }) {
+export default function MessageBox({ setToggleRefresh, receiver, socket}) {
 
     const [message, setMessage] = useState('');
 
     const sendMessage = () => {
         if (message)
             chatService.sendMessage(receiver, message).then(response => {
-                setToggleRefresh(prevState => !prevState)
+                setToggleRefresh(prevState => !prevState);
             });
         setMessage('');
+        if(message)
+        {
+            socket.emit("send_notification",{
+                "room": receiver,   //receiver id
+                "senderId" : localStorage.getItem("chatApp_Id")
+            })
+        }
     };
 
     return (

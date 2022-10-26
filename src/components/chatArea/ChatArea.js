@@ -11,11 +11,11 @@ import {
     Card
 } from "@material-ui/core";
 
-export default function ChatArea({ setToggleRefresh, messages, receiver, receiverName }) {
+export default function ChatArea({ setToggleRefresh, messages, receiver, receiverName, socket }) {
 
     const bottomRef = useRef();
     useEffect(() => {
-        bottomRef.current.scrollIntoView({ block: "end" });
+        bottomRef.current.scrollIntoView({ behaviour:"smooth" ,block: "end" });
     });
     const classes = styles();
     return (
@@ -54,7 +54,7 @@ export default function ChatArea({ setToggleRefresh, messages, receiver, receive
                     </Box>
                 </>
             )}
-            <MessageBox className={classes.MessageBox} setToggleRefresh={setToggleRefresh} receiver={receiver} />
+            <MessageBox className={classes.MessageBox} setToggleRefresh={setToggleRefresh} receiver={receiver} socket={socket}/>
         </>
 
     )

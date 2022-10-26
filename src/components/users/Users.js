@@ -14,15 +14,17 @@ import SenderProfile from '../senderProfile/SenderProfile'
 import chatService from '../chat/services/chatService';
 
 
-function Users({ setMessages, setReceiver, setReceiverName }) {
+function Users({ setMessages, setReceiver, setReceiverName}) {
     const classes = styles();
     const { users, usersLoading } = useUsers();
     const [senderName, setSenderName] = useState(null);
     const [senderId, setSenderId] = useState(null);
+
     useEffect(() => {
         setSenderName(localStorage.getItem('chatApp_username'));
         setSenderId(localStorage.getItem('chatApp_Id'));
     }, []);
+
 
     faker.seed(23);
     return (
@@ -58,7 +60,8 @@ function Users({ setMessages, setReceiver, setReceiverName }) {
                                                     variant="body2"
                                                     color="textSecondary"
                                                 >
-                                                    Latest message
+
+                                                    {/* {latest Message} */}
                                                 </Typography>
                                             </>
                                         } />
