@@ -6,6 +6,7 @@ import socketClient from "socket.io-client";
 import chatService from './services/chatService';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import {urls} from '../../config/env-config'
 
 
 export default function Chat() {
@@ -29,9 +30,9 @@ export default function Chat() {
     });
 
     useEffect(() => {
-        const newSocket = socketClient("http://localhost:8085/", {
+        const newSocket = socketClient(urls.socketService, {
             query: {
-                "room": localStorage.getItem('chatApp_Id')    //listining 
+                "room": localStorage.getItem('chatApp_Id')    //listening 
             }
         });
         if (newSocket != null) {
